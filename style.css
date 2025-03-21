@@ -19,7 +19,7 @@ header {
 .film-strip {
     width: 100%;
     height: 50px;
-    background: url('/Diseño_sin_título-removebg-preview__1_-removebg-preview.png') repeat-x;
+    background: url('./Diseño_sin_título-removebg-preview__1_-removebg-preview.png') repeat-x;
     background-size: contain;
     animation: filmMove 8s linear infinite;
 }

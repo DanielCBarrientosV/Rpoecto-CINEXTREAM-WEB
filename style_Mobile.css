@@ -14,6 +14,7 @@ header {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    width: 100%; /* Asegura que el encabezado ocupe el 100% del ancho */
 }
 
 .film-strip {
@@ -30,21 +31,23 @@ header {
 }
 
 header img {
-    max-width: 300px; /* Ajusta el tamaño según lo que necesites */
+    max-width: 100%; /* Hace que las imágenes del logo ajusten al tamaño de la pantalla */
     height: auto; /* Mantiene la proporción */
 }
 
 header .logo-container {
     display: flex;
-    justify-content: space-between; /* Esto alinea las imágenes de los extremos a los bordes */
-    align-items: center; /* Centra las imágenes verticalmente */
-    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho de la ventana */
+    justify-content: center; /* Centra las imágenes */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden si no caben */
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
     padding: 0 20px; /* Añade un poco de espacio a los lados */
 }
 
 header .logo-container img {
-    max-width: 0px; /* Establece el mismo tamaño para las imágenes de los extremos */
+    max-width: 250px; /* Limita el tamaño máximo de las imágenes */
     height: auto; /* Mantiene la proporción */
+    margin: 10px; /* Agrega un pequeño margen entre las imágenes */
 }
 
 header .logo-container img:nth-child(1), /* Imagen izquierda */
@@ -53,18 +56,14 @@ header .logo-container img:nth-child(3) { /* Imagen derecha */
 }
 
 header .logo-container img:nth-child(2) { /* Imagen central */
-    max-width: 300px; /* Aumenta el tamaño del logo central */
+    max-width: 300px; /* El logo central será un poco más grande */
 }
 
-@media screen and (min-width: 768px) {
-    header .logo-container img:nth-child(2) { /* Imagen central */
-        max-width: 500px; /* Más grande en pantallas medianas */
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    header .logo-container img:nth-child(2) { /* Imagen central */
-        max-width: 600px; /* Aumenta aún más en pantallas grandes */
+/* Ocultar las imágenes de los lados en pantallas pequeñas */
+@media screen and (max-width: 767px) {
+    header .logo-container img:nth-child(1),
+    header .logo-container img:nth-child(3) {
+        display: none; /* Oculta las imágenes laterales en pantallas pequeñas */
     }
 }
 
@@ -172,26 +171,25 @@ nav a:hover {
 
 .image-container {
     display: flex;
-    justify-content: space-between; /* Esto crea un espacio entre las imágenes */
-    margin-top: 30px; /* Espacio por encima de las imágenes */
+    justify-content: space-between;
+    margin-top: 30px;
     width: 100%;
 }
 
 .project-image {
-    width: 48%; /* Hacemos que las imágenes ocupen un 48% del ancho, para que haya un pequeño espacio entre ellas */
-    height: auto; /* Aseguramos que la altura sea proporcional al ancho */
-    border-radius: 8px; /* Agregamos bordes redondeados a las imágenes */
+    width: 48%;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* Media query para ajustar en pantallas grandes */
 @media screen and (min-width: 768px) {
     .project-image {
-        width: 45%; /* Aumenta el tamaño de las imágenes en pantallas más grandes */
+        width: 45%;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .project-image {
-        width: 40%; /* Ajusta el tamaño en pantallas grandes */
+        width: 40%;
     }
 }

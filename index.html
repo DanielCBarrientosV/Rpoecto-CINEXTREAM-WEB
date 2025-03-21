@@ -1,73 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado con las animaciones de la cinta -->
     <header>
-      <div class="film-strip"></div>
-      <img src="logo.png" alt="Logo del Proyecto" />
-      <div class="film-strip"></div>
+        <div class="film-strip"></div> <!-- Barra superior -->
+        <div class="logo-container">
+            <img src="/WhatsApp_Image_2025-03-21_at_03.15.26-removebg-preview.png" alt="Logo del Proyecto">
+            <img src="/cinextream logo.gif" alt="Logo del Proyecto">
+            <img src="/WhatsApp_Image_2025-03-21_at_03.15.44-removebg-preview.png" alt="Logo del Proyecto">
+        </div>
+        <div class="film-strip"></div> <!-- Barra inferior -->
+        <p></p>
     </header>
-    <nav>
-      <ul>
-        <li><a href="#" onclick="showContent(0)">Introducción</a></li>
-        <li><a href="#" onclick="showContent(1)">Antecedentes</a></li>
-        <li><a href="#" onclick="showContent(2)">Problemática principal</a></li>
-        <li><a href="#" onclick="showContent(3)">Problemas secundarios</a></li>
-        <li><a href="#" onclick="showContent(4)">Qué queremos lograr</a></li>
-        <li><a href="#" onclick="showContent(5)">Nuestras ideas</a></li>
-        <li>
-          <a href="#" onclick="showContent(6)">Requerimientos funcionales</a>
-        </li>
-        <li>
-          <a href="#" onclick="showContent(7)">Requerimientos no funcionales</a>
-        </li>
-        <li><a href="#" onclick="showContent(8)">Organigrama</a></li>
-        <li>
-          <a href="#" onclick="showContent(9)">Diagrama de funcionamiento</a>
-        </li>
-        <li><a href="#" onclick="showContent(10)">Mejoras</a></li>
-      </ul>
-    </nav>
 
+    <!-- Resto del contenido original -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent(0)">Introducción</a></li>
+            <li><a href="#" onclick="showContent(1)">Antecedentes</a></li>
+            <li><a href="#" onclick="showContent(2)">Problemática principal</a></li>
+            <li><a href="#" onclick="showContent(3)">Problemas secundarios</a></li>
+            <li><a href="#" onclick="showContent(4)">Qué queremos lograr</a></li>
+            <li><a href="#" onclick="showContent(5)">Nuestras ideas</a></li>
+            <li><a href="#" onclick="showContent(6)">Requerimientos funcionales</a></li>
+            <li><a href="#" onclick="showContent(7)">Requerimientos no funcionales</a></li>
+            <li><a href="#" onclick="showContent(8)">Organigrama</a></li>
+            <li><a href="#" onclick="showContent(9)">Diagrama de funcionamiento</a></li>
+            <li><a href="#" onclick="showContent(10)">Mejoras</a></li>
+        </ul>
+    </nav>
+    
     <div id="sections">
-      <div class="content active">Bienvenido al Proyecto</div>
-      <div class="content">Contenido de Antecedentes</div>
-      <div class="content">Contenido de Problemática principal</div>
-      <div class="content">Contenido de Problemas secundarios</div>
-      <div class="content">Contenido de Qué queremos lograr</div>
-      <div class="content">Contenido de Nuestras ideas</div>
-      <div class="content">Contenido de Requerimientos funcionales</div>
-      <div class="content">Contenido de Requerimientos no funcionales</div>
-      <div class="content">Contenido de Organigrama</div>
-      <div class="content">Contenido de Diagrama de funcionamiento</div>
-      <div class="content">Contenido de Mejoras</div>
+        <div class="content active">Bienvenido al Proyecto</div>
+        <div class="content">Contenido de Antecedentes</div>
+        <div class="content">Contenido de Problemática principal</div>
+        <div class="content">Contenido de Problemas secundarios</div>
+        <div class="content">Contenido de Qué queremos lograr</div>
+        <div class="content">Contenido de Nuestras ideas</div>
+        <div class="content">Contenido de Requerimientos funcionales</div>
+        <div class="content">Contenido de Requerimientos no funcionales</div>
+        <div class="content">Contenido de Organigrama</div>
+        <div class="content">Contenido de Diagrama de funcionamiento</div>
+        <div class="content">Contenido de Mejoras</div>
+    </div>
+    
+    <div class="dropdown">
+        <button onclick="toggleDropdown()">Enlaces</button>
+        <div class="dropdown-content" id="dropdownContent">
+            <a href="#">Tablero de trabajo</a>
+            <a href="#">Presentaciones</a>
+            <a href="#">Diagramas</a>
+        </div>
     </div>
 
-    <div class="dropdown">
-      <button onclick="toggleDropdown()">Enlaces</button>
-      <div class="dropdown-content" id="dropdownContent">
-        <a href="#">Tablero de trabajo</a>
-        <a href="#">Presentaciones</a>
-        <a href="#">Diagramas</a>
-      </div>
+    <!-- Añadiendo las imágenes al final -->
+    <div class="image-container">
+        <img src="/WhatsApp_Image_2025-03-21_at_02.34.37-removebg-preview.png" alt="Imagen 2" class="project-image">
+        <img src="/WhatsApp_Image_2025-03-21_at_02.34.13-removebg-preview.png" alt="Imagen 1" class="project-image">
+        
     </div>
 
     <script>
-      function showContent(index) {
-        let sections = document.querySelectorAll(".content");
-        sections.forEach((sec) => sec.classList.remove("active"));
-        sections[index].classList.add("active");
-      }
-
-      function toggleDropdown() {
-        let dropdown = document.getElementById("dropdownContent");
-        dropdown.classList.toggle("show");
-      }
+        function showContent(index) {
+            let sections = document.querySelectorAll('.content');
+            sections.forEach(sec => sec.classList.remove('active'));
+            sections[index].classList.add('active');
+        }
+        
+        function toggleDropdown() {
+            let dropdown = document.getElementById("dropdownContent");
+            dropdown.classList.toggle("show");
+        }
     </script>
-  </body>
+</body>
 </html>

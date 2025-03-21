@@ -6,35 +6,75 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     position: relative;
-    padding: 20px;
+    padding: 0px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
+
+.film-strip {
+    width: 100%;
+    height: 50px;
+    background: url('/Diseño_sin_título-removebg-preview__1_-removebg-preview.png') repeat-x;
+    background-size: contain;
+    animation: filmMove 8s linear infinite;
+}
+
+@keyframes filmMove {
+    from { background-position: 0 0; }
+    to { background-position: -100% 0; }
+}
+
 header img {
-    max-width: 200px;
-    position: relative;
-    z-index: 2;
+    max-width: 300px; /* Ajusta el tamaño según lo que necesites */
+    height: auto; /* Mantiene la proporción */
 }
+
+header .logo-container {
+    display: flex;
+    justify-content: space-between; /* Esto alinea las imágenes de los extremos a los bordes */
+    align-items: center; /* Centra las imágenes verticalmente */
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho de la ventana */
+    padding: 0 20px; /* Añade un poco de espacio a los lados */
+}
+
+header .logo-container img {
+    max-width: 0px; /* Establece el mismo tamaño para las imágenes de los extremos */
+    height: auto; /* Mantiene la proporción */
+}
+
+header .logo-container img:nth-child(1), /* Imagen izquierda */
+header .logo-container img:nth-child(3) { /* Imagen derecha */
+    max-width: 250px; /* Asegura que ambas imágenes tengan el mismo tamaño */
+}
+
+header .logo-container img:nth-child(2) { /* Imagen central */
+    max-width: 250px; /* Logo central más grande */
+}
+
 nav {
     display: flex;
     justify-content: center;
     padding: 15px;
     background: linear-gradient(90deg, #1D1616, #8E1616, #D84040);
-    border-radius: 0 0 15px 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
 }
+
 nav ul li {
     margin: 0 10px;
 }
+
 nav a {
     color: white;
     text-decoration: none;
@@ -43,9 +83,11 @@ nav a {
     transition: 0.3s;
     font-weight: bold;
 }
+
 nav a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
 .content {
     display: none;
     padding: 30px;
@@ -55,17 +97,21 @@ nav a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: white;
 }
+
 .active {
     display: block;
     animation: fadeIn 0.5s ease-in-out;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 .dropdown {
     margin-top: 20px;
 }
+
 .dropdown button {
     background: linear-gradient(90deg, #D84040, #8E1616);
     color: white;
@@ -76,6 +122,7 @@ nav a:hover {
     font-size: 16px;
     transition: 0.3s;
 }
+
 .dropdown-content {
     display: none;
     background: white;
@@ -83,6 +130,7 @@ nav a:hover {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .dropdown-content a {
     display: block;
     color: #1D1616;
@@ -90,13 +138,16 @@ nav a:hover {
     text-decoration: none;
     font-weight: bold;
 }
+
 .dropdown-content a:hover {
     background: rgba(216, 64, 64, 0.1);
     border-radius: 5px;
 }
+
 .show {
     display: block;
 }
+
 @media screen and (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -104,5 +155,31 @@ nav a:hover {
     }
     nav ul li {
         margin: 5px 0;
+    }
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Esto crea un espacio entre las imágenes */
+    margin-top: 30px; /* Espacio por encima de las imágenes */
+    width: 100%;
+}
+
+.project-image {
+    width: 48%; /* Hacemos que las imágenes ocupen un 48% del ancho, para que haya un pequeño espacio entre ellas */
+    height: auto; /* Aseguramos que la altura sea proporcional al ancho */
+    border-radius: 8px; /* Agregamos bordes redondeados a las imágenes */
+}
+
+/* Media query para ajustar en pantallas grandes */
+@media screen and (min-width: 768px) {
+    .project-image {
+        width: 45%; /* Aumenta el tamaño de las imágenes en pantallas más grandes */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .project-image {
+        width: 40%; /* Ajusta el tamaño en pantallas grandes */
     }
 }

@@ -1,0 +1,108 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #EEEEEE;
+    color: #1D1616;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img {
+    max-width: 200px;
+    position: relative;
+    z-index: 2;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: linear-gradient(90deg, #1D1616, #8E1616, #D84040);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.content {
+    display: none;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.dropdown {
+    margin-top: 20px;
+}
+.dropdown button {
+    background: linear-gradient(90deg, #D84040, #8E1616);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.dropdown-content {
+    display: none;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.dropdown-content a {
+    display: block;
+    color: #1D1616;
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.dropdown-content a:hover {
+    background: rgba(216, 64, 64, 0.1);
+    border-radius: 5px;
+}
+.show {
+    display: block;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+}

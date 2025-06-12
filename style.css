@@ -72,7 +72,7 @@ nav {
     display: flex;
     justify-content: center;
     padding: 15px;
-    background: linear-gradient(90deg, #1D1616, #8E1616, #D84040);
+    background: linear-gradient(90deg, #351544, #552277, #cc48fc);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,7 +125,7 @@ nav a:hover {
 }
 
 .dropdown button {
-    background: linear-gradient(90deg, #D84040, #8E1616);
+    background: linear-gradient(90deg, #310a44, #8411ad);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -193,5 +193,76 @@ nav a:hover {
 @media screen and (min-width: 1024px) {
     .project-image {
         width: 40%; /* Ajusta el tamaño en pantallas grandes */
+    }
+}
+/* Estilo para el contenedor principal de secciones */
+#sections {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Estilo mejorado para cada bloque de contenido */
+#sections .content {
+    background: #ffffff;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    border-left: 6px solid #8411ad; /* barra lateral tipo presentación */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Cuando está activa (visible) */
+#sections .content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInSlide 0.5s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para los títulos dentro de cada sección */
+#sections .content h2 {
+    color: #2a1134;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #8411ad;
+    padding-bottom: 10px;
+}
+
+/* Estilo para el iframe (diagrama embebido) */
+#sections iframe {
+    width: 100%;
+    height: 480px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f4f4f4;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #sections .content {
+        padding: 25px 20px;
+    }
+
+    #sections .content h2 {
+        font-size: 1.4rem;
+    }
+
+    #sections iframe {
+        min-height: 320px;
     }
 }

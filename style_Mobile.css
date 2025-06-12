@@ -71,7 +71,7 @@ nav {
     display: flex;
     justify-content: center;
     padding: 15px;
-    background: linear-gradient(90deg, #1D1616, #8E1616, #D84040);
+    background: linear-gradient(90deg, #351544, #552277, #cc48fc);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -124,7 +124,7 @@ nav a:hover {
 }
 
 .dropdown button {
-    background: linear-gradient(90deg, #D84040, #8E1616);
+    background: linear-gradient(90deg, #310a44, #8411ad);
     color: white;
     border: none;
     padding: 12px 25px;
